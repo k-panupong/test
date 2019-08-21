@@ -1,0 +1,4 @@
+com\example\springposgres\controller\HelloController.class
+com\example\springposgres\repository\MicroserviceRepository.class
+com\example\springposgres\DemoApplication.class
+com\example\springposgres\model\Microservice.class
