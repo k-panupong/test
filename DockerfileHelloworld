@@ -1,0 +1,9 @@
+FROM openjdk:8-jre
+
+ADD ./target/MicroServicePostgress-1.0-SNAPSHOT.jar /app
+
+CMD ["java","-jar","/app/MicroServicePostgress-1.0-SNAPSHOT.jar"]
+
+EXPOSE 9090
+
+#docker build -t hello:1.0 -f DockerfileHelloworld .
