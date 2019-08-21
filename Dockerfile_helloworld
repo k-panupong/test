@@ -1,0 +1,9 @@
+FROM openjdk:8-jre
+
+COPY ./target/helloworld.jar /app/
+
+CMD ["java","-jar","/app/helloworld.jar"]
+
+EXPOSE 9090
+
+#docker build -t hello:1.0 -f Dockerfile_helloworld .

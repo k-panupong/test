@@ -14,7 +14,7 @@ public class Microservice implements Serializable {
 	private static final long serialVersionUID = -2343243243242432341L;
 	@Id
 	@Column(name = "service_id")
-	private long id;
+	private int id;
  
 	@Column(name = "service_name")
 	private String serviceName;
@@ -23,7 +23,7 @@ public class Microservice implements Serializable {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

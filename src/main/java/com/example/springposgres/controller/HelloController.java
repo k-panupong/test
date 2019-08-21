@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.example.springposgres.model.Message;
 import com.example.springposgres.model.Microservice;
 import com.example.springposgres.repository.MicroserviceRepository;
 
@@ -22,12 +23,18 @@ public class HelloController {
 	MicroserviceRepository repository;
 	
 	@GetMapping("/hi")
-	public List<String> findAll(){
-		List<Microservice> microservices = repository.findAll();
-		List<String> data = new ArrayList<String>();
-		for(Microservice microservice: microservices ){
-			data.add(microservice.getServiceName());
+	public Message findAll(){
+
+		Microservice microservices = repository.findById(1);
+
+		Message message = new Message();
+
+		if(microservices!=null && microservices.getServiceName() !=null){
+			message.setMessage(microservices.getServiceName());
+		}else{
+			message.setMessage("Error..");
 		}
-		return data;
+
+		return message;
 	}
 }
